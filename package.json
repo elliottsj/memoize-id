@@ -1,6 +1,6 @@
 {
   "name": "memoize-id",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Memoize a function by the identity of its arguments",
   "main": "lib/index.js",
   "scripts": {
