@@ -1,5 +1,5 @@
 # memoize-id [![Build Status][travis-badge]][travis]
-Memoize a function by the identity of its arguments, using [ES2015 Map][Map]).
+Memoize a function by the identity of its arguments, using [ES2015 Map][Map].
 
 ### Installation
 ```shell
