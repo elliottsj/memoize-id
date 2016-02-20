@@ -47,7 +47,7 @@ console.log(v1 == v3);
 // false
 ```
 
-[Map]: (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+[Map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 [Symbol]: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol
 [npm]: https://www.npmjs.com/package/memoize-id
 [npm-badge]: https://img.shields.io/npm/v/memoize-id.svg
