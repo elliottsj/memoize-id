@@ -1,7 +1,7 @@
 {
   "name": "memoize-id",
   "version": "0.1.1",
-  "description": "Memoize a function by the identity of its arguments",
+  "description": "Memoize a function by the identity of its arguments, using ES2015 Map",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
