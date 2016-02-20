@@ -55,6 +55,8 @@ describe('memoize', () => {
     expect(i).toBe(2);
     expect(memoizedFn('foo', 'bar', 'baz')).toEqual({ args: ['foo', 'bar', 'baz'], i: 2 });
     expect(i).toBe(2);
+    expect(memoizedFn('foo', 'qux', 'baz')).toEqual({ args: ['foo', 'qux', 'baz'], i: 3 });
+    expect(i).toBe(3);
   });
 
   it('memoizes when three object arguments are passed', () => {
