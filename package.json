@@ -2,10 +2,12 @@
   "name": "memoize-id",
   "version": "0.0.1",
   "description": "Memoize a function by the identity of its arguments",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "build": "babel src --out-dir lib",
     "jest": "jest",
     "lint": "eslint .",
+    "prepublish": "npm run build",
     "test": "npm run lint && npm run jest"
   },
   "repository": {
@@ -33,7 +35,7 @@
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "testPathDirs": [
-      "<rootDir>"
+      "<rootDir>/src"
     ],
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules"
