@@ -1,4 +1,4 @@
-# memoize-id [![Build Status][travis-badge]][travis]
+# memoize-id [![npm][npm-badge]][npm] [![Build Status][travis-badge]][travis]
 Memoize a function by the identity of its arguments, using [ES2015 Map][Map].
 
 ### Installation
@@ -49,5 +49,7 @@ console.log(v1 == v3);
 
 [Map]: (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 [Symbol]: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol
+[npm]: https://www.npmjs.com/package/memoize-id
+[npm-badge]: https://img.shields.io/npm/v/memoize-id.svg
 [travis]: https://travis-ci.org/elliottsj/memoize-id
 [travis-badge]: https://travis-ci.org/elliottsj/memoize-id.svg?branch=master
