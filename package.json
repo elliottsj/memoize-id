@@ -33,7 +33,6 @@
     "jest-cli": "^0.9.0"
   },
   "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "testPathDirs": [
       "<rootDir>/src"
     ],
