@@ -117,4 +117,32 @@ describe('memoize', () => {
     );
     expect(i).toBe(3);
   });
+
+  it('memoizes by the first N arguments when the arity option is passed', () => {
+    let i = 0;
+    function fn(foo, bar, baz) {
+      i += 1;
+      return {
+        args: [foo, bar, baz],
+        i,
+      };
+    }
+    const memoizedFn = memoize(fn, { arity: 2 });
+    expect(memoizedFn('foo', 'bar', 'baz')).toEqual({ args: ['foo', 'bar', 'baz'], i: 1 });
+    expect(memoizedFn('foo', 'bar', 'qux')).toEqual({ args: ['foo', 'bar', 'baz'], i: 1 });
+  });
+
+  it('memoizes the initial return value when and arity of 0 is passed', () => {
+    let i = 0;
+    function fn(foo, bar, baz) {
+      i += 1;
+      return {
+        args: [foo, bar, baz],
+        i,
+      };
+    }
+    const memoizedFn = memoize(fn, { arity: 0 });
+    expect(memoizedFn('foo', 'bar', 'baz')).toEqual({ args: ['foo', 'bar', 'baz'], i: 1 });
+    expect(memoizedFn('qux')).toEqual({ args: ['foo', 'bar', 'baz'], i: 1 });
+  });
 });
