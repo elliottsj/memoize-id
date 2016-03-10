@@ -145,4 +145,62 @@ describe('memoize', () => {
     expect(memoizedFn('foo', 'bar', 'baz')).toEqual({ args: ['foo', 'bar', 'baz'], i: 1 });
     expect(memoizedFn('qux')).toEqual({ args: ['foo', 'bar', 'baz'], i: 1 });
   });
+
+  pit('memoizes node-style async functions', async () => {
+    let i = 0;
+    function fn(foo, bar, callback) {
+      i += 1;
+      setImmediate(() => {
+        callback(null, {
+          args: [foo, bar],
+          i,
+        });
+      });
+    }
+    const memoizedFn = memoize(fn, { async: true });
+    await new Promise((resolve) => {
+      memoizedFn('foo', 'bar', (error, result) => {
+        expect(result).toEqual({ args: ['foo', 'bar'], i: 1 });
+        resolve();
+      });
+    });
+    await new Promise((resolve) => {
+      let sync = true;
+      memoizedFn('foo', 'bar', (error, result) => {
+        expect(result).toEqual({ args: ['foo', 'bar'], i: 1 });
+        expect(sync).toBe(false);
+        resolve();
+      });
+      sync = false;
+    });
+  });
+
+  pit('calls the callback immediately when using async: \'immediate\'', async () => {
+    let i = 0;
+    function fn(foo, bar, callback) {
+      i += 1;
+      setImmediate(() => {
+        callback(null, {
+          args: [foo, bar],
+          i,
+        });
+      });
+    }
+    const memoizedFn = memoize(fn, { async: 'immediate' });
+    await new Promise((resolve) => {
+      memoizedFn('foo', 'bar', (error, result) => {
+        expect(result).toEqual({ args: ['foo', 'bar'], i: 1 });
+        resolve();
+      });
+    });
+    await new Promise((resolve) => {
+      let sync = true;
+      memoizedFn('foo', 'bar', (error, result) => {
+        expect(result).toEqual({ args: ['foo', 'bar'], i: 1 });
+        expect(sync).toBe(true);
+        resolve();
+      });
+      sync = false;
+    });
+  });
 });

@@ -44,19 +44,52 @@ function set(cache, keys, value) {
   return value;
 }
 
+function memoizeAsync(fn, { arity, immediate }) {
+  const cache = new Map();
+  return function memoized(...args) {
+    const fnArgs = args.slice(0, -1);
+    const callback = args[args.length - 1];
+    const cacheArgs = arity !== undefined ? fnArgs.slice(0, arity) : fnArgs;
+    const cached = get(cache, cacheArgs);
+    if (cached) {
+      if (immediate) {
+        callback(null, cached);
+        return;
+      }
+      setImmediate(() => callback(null, cached));
+      return;
+    }
+    fn(...fnArgs, (error, result) => {
+      if (!error) {
+        set(cache, cacheArgs, result);
+      }
+      callback(error, result);
+    });
+  };
+}
+
 /**
- * Memoize the given function by the identity of its arguments. If an integer N is passed
- * as the first argument, return values will be cached based on the first N arguments.
- * @param  {Function} fn
+ * Memoize the given function by the identity of its arguments.
+ * @param  {Function}       fn
  *   The function to memoize
- * @param  {Object}   [options]
+ * @param  {Object}         [options]
  *   Options
- * @param  {Number}   [options.arity]
- *  The number of arguments to memoize by. Default: all
+ * @param  {Number}         [options.arity]
+ *   The number of arguments to memoize by. If undefined, all arguments will be used.
+ * @param  {Boolean|String} [options.async]
+ *   Pass `true` if fn is a Node-style asynchronous function: results passed to the final
+ *   callback argument will be cached and provided asynchronously
+ *   (via `setImmediate`) to subsequent calls.
+ *   Pass 'immediate' to call the callback immediately for subsequent calls.
+ *   If an error is returned (as the first argument to the callback), the result
+ *   will not be cached.
  * @return {Function}
- *  The memoized function
+ *   The memoized function
  */
-export default function memoize(fn, { arity } = {}) {
+export default function memoize(fn, { arity, async } = {}) {
+  if (async) {
+    return memoizeAsync(fn, { arity, immediate: async === 'immediate' });
+  }
   const cache = new Map();
   return function memoized(...args) {
     const cacheArgs = arity !== undefined ? args.slice(0, arity) : args;
