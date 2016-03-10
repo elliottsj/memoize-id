@@ -45,13 +45,21 @@ function set(cache, keys, value) {
 }
 
 /**
- * Memoize the given function by the identity of its arguments.
- * @param  {Function} fn The function to memoize
- * @return {Function}    The memoized function
+ * Memoize the given function by the identity of its arguments. If an integer N is passed
+ * as the first argument, return values will be cached based on the first N arguments.
+ * @param  {Function} fn
+ *   The function to memoize
+ * @param  {Object}   [options]
+ *   Options
+ * @param  {Number}   [options.arity]
+ *  The number of arguments to memoize by. Default: all
+ * @return {Function}
+ *  The memoized function
  */
-export default function memoize(fn) {
+export default function memoize(fn, { arity } = {}) {
   const cache = new Map();
   return function memoized(...args) {
-    return get(cache, args) || set(cache, args, fn(...args));
+    const cacheArgs = arity !== undefined ? args.slice(0, arity) : args;
+    return get(cache, cacheArgs) || set(cache, cacheArgs, fn(...args));
   };
 }
