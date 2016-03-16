@@ -25,12 +25,12 @@
   "homepage": "https://github.com/elliottsj/memoize-id#readme",
   "devDependencies": {
     "babel-cli": "^6.5.1",
-    "babel-eslint": "^5.0.0",
+    "babel-eslint": "^6.0.0-beta.6",
     "babel-jest": "^9.0.0",
     "babel-plugin-transform-async-to-generator": "^6.7.0",
     "babel-polyfill": "^6.6.1",
     "babel-preset-es2015": "^6.5.0",
-    "eslint": "~2.4.0",
+    "eslint": "^2.4.0",
     "eslint-config-airbnb": "^6.0.2",
     "eslint-plugin-react": "^4.0.0",
     "jest-cli": "^0.9.0"
