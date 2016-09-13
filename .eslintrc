@@ -3,5 +3,8 @@
   "parser": "babel-eslint",
   "env": {
     "jest": true
+  },
+  "rules": {
+    "arrow-parens": "off"
   }
 }
