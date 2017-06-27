@@ -1,10 +1,21 @@
 {
-  "extends": "airbnb-base",
-  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
   "env": {
+    "jasmine": true,
     "jest": true
   },
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
-    "arrow-parens": "off"
+    "prettier/prettier": [
+      "error", {
+        "trailingComma": "all",
+        "singleQuote": true
+      }
+    ]
   }
 }
