@@ -1,8 +1,9 @@
-# memoize-id [![npm][npm-badge]][npm] [![Build Status][travis-badge]][travis] [![Greenkeeper badge][greenkeeper-badge]][greenkeeper]
+# memoize-id [![npm][npm-badge]][npm]
 
-Memoize a function by the identity of its arguments, using [ES2015 Map][Map].
+Memoize a function by the identity of its arguments, using [ES2015 Map][map].
 
 ### Installation
+
 ```shell
 npm install memoize-id
 ```
@@ -10,6 +11,7 @@ npm install memoize-id
 _Note: ES2015 [Symbol][] and [Map][] must be available where memoize-id is used. Refer to [ECMAScript 6 compatibility table](https://kangax.github.io/compat-table/es6/)._
 
 ### Usage
+
 ```js
 import memoize from 'memoize-id';
 // or:
@@ -48,8 +50,8 @@ console.log(v1 == v3);
 // false
 ```
 
-[Map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
-[Symbol]: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol
+[map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+[symbol]: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol
 [greenkeeper]: https://greenkeeper.io/
 [greenkeeper-badge]: https://badges.greenkeeper.io/elliottsj/memoize-id.svg
 [npm]: https://www.npmjs.com/package/memoize-id

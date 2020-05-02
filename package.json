@@ -5,10 +5,11 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
     "jest": "jest",
-    "lint": "eslint .",
     "prepublish": "npm run build",
-    "test": "npm run lint && npm run jest"
+    "test": "npm run format:check && npm run jest"
   },
   "repository": {
     "type": "git",
@@ -24,17 +25,12 @@
   },
   "homepage": "https://github.com/elliottsj/memoize-id#readme",
   "devDependencies": {
-    "babel-cli": "^6.5.1",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.0",
-    "babel-jest": "^23.0.0",
-    "babel-plugin-transform-async-to-generator": "^6.7.0",
-    "babel-polyfill": "^6.6.1",
-    "babel-preset-es2015": "^6.5.0",
-    "eslint": "^4.2.0",
-    "eslint-plugin-prettier": "^2.1.2",
-    "jest": "^22.4.2",
-    "prettier": "^1.5.0"
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6",
+    "babel-jest": "25.5.1",
+    "jest": "25.5.4",
+    "prettier": "2.0.5"
   },
   "jest": {
     "roots": [

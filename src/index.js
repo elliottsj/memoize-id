@@ -1,5 +1,5 @@
 const sentinel = Symbol(
-  'Cache key for `memoize` corresponding to the cached value for a complete set of arguments',
+  'Cache key for `memoize` corresponding to the cached value for a complete set of arguments'
 );
 
 /**
