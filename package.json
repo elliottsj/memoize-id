@@ -1,6 +1,6 @@
 {
   "name": "memoize-id",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Memoize a function by the identity of its arguments, using ES2015 Map",
   "main": "lib/index.js",
   "scripts": {
