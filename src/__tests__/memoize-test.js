@@ -190,13 +190,13 @@ describe('memoize', () => {
       });
     }
     const memoizedFn = memoize(fn, { async: true });
-    await new Promise(resolve => {
+    await new Promise((resolve) => {
       memoizedFn('foo', 'bar', (error, result) => {
         expect(result).toEqual({ args: ['foo', 'bar'], i: 1 });
         resolve();
       });
     });
-    await new Promise(resolve => {
+    await new Promise((resolve) => {
       let sync = true;
       memoizedFn('foo', 'bar', (error, result) => {
         expect(result).toEqual({ args: ['foo', 'bar'], i: 1 });
@@ -219,13 +219,13 @@ describe('memoize', () => {
       });
     }
     const memoizedFn = memoize(fn, { async: 'immediate' });
-    await new Promise(resolve => {
+    await new Promise((resolve) => {
       memoizedFn('foo', 'bar', (error, result) => {
         expect(result).toEqual({ args: ['foo', 'bar'], i: 1 });
         resolve();
       });
     });
-    await new Promise(resolve => {
+    await new Promise((resolve) => {
       let sync = true;
       memoizedFn('foo', 'bar', (error, result) => {
         expect(result).toEqual({ args: ['foo', 'bar'], i: 1 });
