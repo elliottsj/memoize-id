@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [12.x, 14.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -16,6 +16,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install --global yarn@1
-      - run: yarn install
-      - run: yarn test
+      - run: npm install --global pnpm@5.16.0
+      - run: pnpm install
+      - run: pnpm test
