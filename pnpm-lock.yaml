@@ -6,7 +6,7 @@ specifiers:
   '@babel/preset-env': 7.14.7
   babel-jest: 26.6.3
   jest: 26.6.3
-  prettier: 2.3.1
+  prettier: 2.3.2
 
 devDependencies:
   '@babel/cli': 7.14.5_@babel+core@7.14.6
@@ -14,7 +14,7 @@ devDependencies:
   '@babel/preset-env': 7.14.7_@babel+core@7.14.6
   babel-jest: 26.6.3_@babel+core@7.14.6
   jest: 26.6.3
-  prettier: 2.3.1
+  prettier: 2.3.2
 
 packages:
 
@@ -4294,8 +4294,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier/2.3.1:
-    resolution: {integrity: sha512-p+vNbgpLjif/+D+DwAZAbndtRrR0md0MwfmOVN9N+2RgyACMT+7tfaRnT+WDPkqnuVwleyuBIG2XBxKDme3hPA==}
+  /prettier/2.3.2:
+    resolution: {integrity: sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
