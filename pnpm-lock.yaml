@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@babel/cli': 7.17.3
+  '@babel/cli': 7.17.6
   '@babel/core': 7.17.5
   '@babel/preset-env': 7.16.11
   babel-jest: 26.6.3
@@ -9,7 +9,7 @@ specifiers:
   prettier: 2.5.1
 
 devDependencies:
-  '@babel/cli': 7.17.3_@babel+core@7.17.5
+  '@babel/cli': 7.17.6_@babel+core@7.17.5
   '@babel/core': 7.17.5
   '@babel/preset-env': 7.16.11_@babel+core@7.17.5
   babel-jest: 26.6.3_@babel+core@7.17.5
@@ -25,8 +25,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.4
     dev: true
 
-  /@babel/cli/7.17.3_@babel+core@7.17.5:
-    resolution: {integrity: sha512-1+WRlh1IqLocOp122CLx4if345RSHMspwIZNJTlqG/GA46HVZC6p49N1kolfdd2/GOdr+tu4nScbAR3ACJ2ZiA==}
+  /@babel/cli/7.17.6_@babel+core@7.17.5:
+    resolution: {integrity: sha512-l4w608nsDNlxZhiJ5tE3DbNmr61fIKMZ6fTBo171VEFuFMIYuJ3mHRhTLEkKKyvx2Mizkkv/0a8OJOnZqkKYNA==}
     engines: {node: '>=6.9.0'}
     hasBin: true
     peerDependencies:
